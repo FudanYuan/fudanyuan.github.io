@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>利用hexo搭建个人博客简易教程（二）</title>
+      <link href="/2018/09/09/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+      <url>/2018/09/09/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
+      <content type="html"><![CDATA[<h2 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h2><p>  安装完Hexo，下面就可以着手建站了，兴奋啊！！！<br>  执行以下命令，hexo将会在指定文件夹中新建所需要的文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure><p>  新建完成后，指定文件下的目录如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">|___ _config.yml</span><br><span class="line">|___ package.json</span><br><span class="line">|___ scaffolds</span><br><span class="line">|___ source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">|___ themes</span><br></pre></td></tr></table></figure><p>  对于目录的具体内容，可参考<a href="https://hexo.io/zh-cn/docs/setup" target="_blank" rel="noopener">hexo官方教程</a>，在此不再赘述。</p><h2 id="运行看效果"><a href="#运行看效果" class="headerlink" title="运行看效果"></a>运行看效果</h2><p>  接下来，使用下面两个命令，即可一览博客真容了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p>  当命令行显示</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure><p>  就代表整个博客网站搭建好了，然后，在浏览器地址栏输入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a>,按下回车键，哇！</p><p><img src="/images/index.png" alt=""></p><h2 id="发布第一篇博文"><a href="#发布第一篇博文" class="headerlink" title="发布第一篇博文"></a>发布第一篇博文</h2><p>  终于来到了这一步，心情无比激动，距离发布自己的第一篇博客已经近在咫尺了！<br>  使用下面的命令即可新建一篇文章。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure><p>  如果layout未设置的话，默认使用_config.yml中的default_layout参数代替，如果标题包含空格的话，请使用引号括起来。</p><p>  举个例子，我想发一篇hello world的博客，那么即可输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post &quot;hello world&quot;</span><br></pre></td></tr></table></figure><p>  那么就可以在/source/_post/文件夹中找到名为<code>hello world.md</code>的文件，编辑这个文件即可。如果对markdown文件不熟悉的话，可以参考<a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">教程</a>。</p><h2 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h2><p>  怎么样？第一篇博客发布之后，是不是感觉很简单呢？</p><p>  可是，审美要求比较高的小伙伴可能对hexo默认的主题不是很满意，想pick一款自己心仪的主题。没问题，到<a href="https://hexo.io/themes/" target="_blank" rel="noopener">官方提供的主题库</a>去,那儿的主题多得可能会让你纠结一会儿。反正我是挑了好久， 才选择了<code>next</code>主题，简约大方，很喜欢。下面，告诉大家如何将默认主题更换为自己喜欢的主题。</p><h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><p>  安装目录中含有<code>themes</code>文件夹，我们可以把自己喜欢的主题都放到这个文件夹下。<br>  进入<code>themes</code>文件夹，输入如下命令即可安装主题了：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https://github.com/theme-next/hexo-theme-next</span><br></pre></td></tr></table></figure><h3 id="更改配置文件"><a href="#更改配置文件" class="headerlink" title="更改配置文件"></a>更改配置文件</h3><p>  然后，更改网站根目录下的<code>_config.yml</code>文件中的<code>theme</code>属性，将其设置为下载的主题名即可。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure><p>  接下来，输入下面几行命令就可以看到自己满意的主题了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p>  最后，截一张我的个人博客图吧。</p><p><img src="/images/myBlog.png" alt=""></p>]]></content>
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>利用hexo搭建个人博客简易教程（一）</title>
+      <link href="/2018/09/08/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+      <url>/2018/09/08/%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%AE%80%E6%98%93%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  很长一段时间想拥有一个属于自己的博客，但一直没有将这个想法付诸现。今天上午，看到网上很多博主都是借助<a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>来搭建的个人博客，貌似不很难的样子，于是便也尝试搞一下。废话不多说，下面直接开始搭建现在的个人博客，老铁们准备好了吗？  </p><p>  按照<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官方文档</a>的介绍，安装Hexo之前，需要安装Node.js和Git。如果你的电脑上已经安装好了，那么跳过前两步，直接安装即可。</p><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><blockquote><p>Mac或Linux系统<br>  本文推荐使用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>安装Node.js。可以使用curl或wget来安装nvm。</p></blockquote><p>  curl:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure></p><p>  wget:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure></p><p>  安装完成后，重启终端并执行下列命令即可安装node.js。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install stable</span><br></pre></td></tr></table></figure></p><blockquote><p>Windows系统<br>  建议使用<a href="https://nodejs.org/en/" target="_blank" rel="noopener">安装程序</a>安装。</p></blockquote><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ul><li>Mac: 使用<a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>: <code>brew install git</code>或下载<a href="">安装程序</a>安装。</li><li>Linux(Ubuntu,Debian):<code>sudo apt-get install git-core</code>。</li><li>Linux(Fedora, Red Hat, CentOS): <code>sudo yum install git-core</code></li><li>Windows: 下载安装<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a></li></ul><blockquote><p>Windows用户<br>由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。也可以参考<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">这个页面</a>，收录了存储于百度云的下载地址。</p></blockquote><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>  使用npm安装Hexo。</p><pre><code class="bash">$ nvm install -g hexo-cli</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/09/08/hello-world/"/>
+      <url>/2018/09/08/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+    </entry>
+    
+  
+  
+</search>
